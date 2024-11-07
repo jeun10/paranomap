@@ -10,13 +10,19 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class BoardController {
-	@GetMapping("/mainBoard")
+	@GetMapping("/insertReview")
 	public String mainBoard(Model model, HttpSession session) {
 		/*
 		 * User loginUser = (User) session.getAttribute("loginUser");
 		 * 
 		 * model.addAttribute("loginUser", loginUser);
 		 */
-		return "/board/mainBoard";
+		return "/board/insertReview";
+	}
+	
+	@GetMapping("/reservation")
+	public String reBoard(Model model, HttpSession session) {
+		
+		return "/board/reservation";
 	}
 }
