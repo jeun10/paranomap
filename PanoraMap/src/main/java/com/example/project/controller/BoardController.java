@@ -20,9 +20,9 @@ public class BoardController {
 		return "/board/insertReview";
 	}
 	
-	@GetMapping("/reservation")
+	@GetMapping("/mainBoard")
 	public String reBoard(Model model, HttpSession session) {
 		
-		return "/board/reservation";
+		return "/board/mainBoard";
 	}
 }
