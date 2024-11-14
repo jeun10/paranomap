@@ -103,7 +103,10 @@
 						</div>
 						
 						<div id="float_btn_panel">
-							<button type="button" id="float_panel_btn" > 패널접기 </button>
+							<button type="button" aria-expanded="true" id="float_panel_btn" > 
+								<span id="float_btn_img"></span>
+								<span id="float_btn_text">패널접기</span>	
+							</button>
 						</div>
 						
 					</div>
@@ -119,7 +122,17 @@
 	<script>
 	$('#float_panel_btn').click(function(){
 		$('#float_panel').toggle("slide", { direction: "left" }, 1000);
-		$('#float_btn_panel').animate({left:1},1000);
+		
+		if($('#float_panel_btn').attr("aria-expanded")=="true"){
+			$('#float_btn_panel').animate({left:1}, 1000);
+			$('#float_panel_btn').attr("aria-expanded", "false");
+			$('#float_btn_text').text("패널열기");
+		}
+		else if($('#float_panel_btn').attr("aria-expanded")=="false"){
+			$('#float_btn_panel').animate({left:400}, 1000);
+			$('#float_panel_btn').attr("aria-expanded", "true");
+			$('#float_btn_text').text("패널접기");
+		}
 	});
 	
 	</script>
