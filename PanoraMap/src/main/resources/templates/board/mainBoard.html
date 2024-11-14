@@ -91,19 +91,38 @@
 			</div>
 
 
-			<div class="col-11">
-				<div style="background: gray;">
-
+			<div class="col-11" id="main_panel">
 				
+				<div style="background: gray;">
+					
+					<div id="wrap_float_panel">
+						
+						<div id="float_panel" style="background: yellow;">
+							<span>hello</span>
+							<div>검색창</div>
+						</div>
+						
+						<div id="float_btn_panel">
+							<button type="button" id="float_panel_btn" > 패널접기 </button>
+						</div>
+						
+					</div>
+					
 					<div id="map"></div>
 
-
-
 				</div>
+				
+				
 			</div>
 		</div>
 	</div>
-
+	<script>
+	$('#float_panel_btn').click(function(){
+		$('#float_panel').toggle("slide", { direction: "left" }, 1000);
+		$('#float_btn_panel').animate({left:1},1000);
+	});
+	
+	</script>
 
 
 	<script type="text/javascript"
